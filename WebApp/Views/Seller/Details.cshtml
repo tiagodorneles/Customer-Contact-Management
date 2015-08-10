@@ -1,0 +1,74 @@
+﻿@model WebApp.DAL.Customer
+
+@{
+    ViewBag.Title = "Customer Contact Details";
+}
+
+<h2>Customer Contact Details</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Classification
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classification.Name)
+        </dd>
+
+        <dt>
+            Phone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            Gender
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityRegion.City.Name)
+        </dd>
+
+        <dt>
+            Region
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityRegion.Name)
+        </dd>
+        <dt>
+            Last Purchase
+        </dt>
+
+        <dd>
+            @Model.LastPurchase.ToShortDateString()
+        </dd>
+        @if (User.IsInRole("Admin"))
+        {
+            <dt>
+                Seller
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Seller.Email)
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "CustomerList")
+</p>

@@ -1,0 +1,30 @@
+﻿body { padding-top: 50px; padding-bottom: 20px; }
+
+/* Set padding to keep content from hitting the edges */
+.body-content { padding-left: 15px; padding-right: 15px; }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt { white-space: normal; }
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea { max-width: 280px; }
+
+table th { border-top: none !important; }
+
+.form-customer-filters .btn { width: 100%; }
+
+p.until { margin: 3px auto; }
+
+.customer-list-header { margin-top: 5px; }
+    .customer-list-header .btn { margin-top: 20px; }
+
+#customer-list thead { background-color: #F5F5F5; }
+#customer-list th { cursor: default; font-size: 9pt; }
+
+    #customer-list th.headerSortUp, #customer-list th.headerSortDown { background-color: #878787; color: white; }
+        #customer-list th.headerSortUp::before { content: "▲ "; }
+        #customer-list th.headerSortDown::before { content: "▼ "; }
